@@ -15,8 +15,8 @@ print(incomplete)
 #POST method
 new_todo={"userId":10, "id":2, "title":"things to do", "completed":False}
 response=requests.post(api_url,json=new_todo)
-response.json()
-print(response.json())
+post_response=response.json()
+print(post_response)
 
 #PUT method
 api_url="https://jsonplaceholder.typicode.com/todos/4"
@@ -25,14 +25,14 @@ response.json()
 
 updated_todo={"userId": 1, "id":4,"title": "Pay Bills", "completed": False}
 response=requests.put(api_url, json=updated_todo)
-response.json()
-print(response.json())
+put_response=response.json()
+print(put_response)
 
 # PATCH method
 todo={"completed":True}
 response=requests.patch(api_url,json=todo)
-response.json()
-print(response.json())
+patch_response=response.json()
+print(patch_response)
 
  #DELETE method
 response=requests.delete(api_url)
