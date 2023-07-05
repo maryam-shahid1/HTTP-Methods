@@ -1,6 +1,6 @@
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
-PORT=8080
+PORT=8000
 HOST="127.0.0.1"
 
 class WebRequestsHandler(BaseHTTPRequestHandler):
@@ -11,9 +11,11 @@ class WebRequestsHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        self.set_headers()
         self.wfile.write(bytes("<html><body><h1>GET method</h1></body></html>","utf-8"))
 
     def do_POST(self):
+        self.set_headers()
         self.wfile.write(bytes("<html><body><h1>POST method</h1></body></html>","utf-8"))
 
 
