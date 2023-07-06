@@ -21,3 +21,4 @@ class WebRequestsHandler(BaseHTTPRequestHandler):
 server=HTTPServer((HOST,PORT), WebRequestsHandler)
 print("Server Now Running...")
 server.serve_forever()
+
