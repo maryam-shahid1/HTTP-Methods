@@ -13,11 +13,13 @@ class WebRequestsHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self.set_headers()
-        self.wfile.write(bytes("<html><body><h1>GET method</h1></body></html>","utf-8"))
+        self.wfile.write(bytes("<html><body><h1>GET method</h1></body></html>",
+                               "utf-8"))
 
     def do_POST(self):
         self.set_headers()
-        self.wfile.write(bytes("<html><body><h1>POST method</h1></body></html>","utf-8"))
+        self.wfile.write(bytes("<html><body><h1>POST method</h1></body></html>",
+                               "utf-8"))
 
 
 server=HTTPServer((HOST,PORT), WebRequestsHandler)
